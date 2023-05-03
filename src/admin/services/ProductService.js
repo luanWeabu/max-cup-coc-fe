@@ -59,19 +59,17 @@ class ProductService {
     // nếu sản phẩm !== 1 nghĩa là có tồn tại
     if (index !== -1) {
       //lấy sản phẩm theo từng index
-      this.dataProduct[index] = {
+      return (this.dataProduct[index] = {
         //tạo ra sản phẩm bản sao sau đó ghi đè lên bằng updateProduct(giá trị truyền vào)
         ...this.dataProduct[index],
         ...updatedProduct,
-      };
-      return "Update successful";
+      });
     }
-    return `Something is wrong of Product with ID ${id} not found`;
   }
   //xóa sản phẩm theo id
   deleteProduct(id) {
     //findIndex được sử dụng để tìm kiếm vị trí của product có id tương úng trong dataProduct
-    //Nếu được tìm thấy phần tử tại vị trí đó sẽ bị xóa khỏi mảng bằng splice 
+    //Nếu được tìm thấy phần tử tại vị trí đó sẽ bị xóa khỏi mảng bằng splice
     const index = this.dataProduct.findIndex((product) => product.id === id);
     if (index !== -1) {
       this.dataProduct.splice(index, 1);
@@ -79,11 +77,11 @@ class ProductService {
     }
     return `Something is wrong of Product with ID ${id} not found`;
   }
-
+  // them product
   addProduct(newProduct) {
     this.dataProduct.push(newProduct);
   }
-
+  // khi tạo
   createNewId() {
     return this.dataProduct.length > 0
       ? this.dataProduct[this.dataProduct.length - 1].id + 1

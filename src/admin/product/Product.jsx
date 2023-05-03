@@ -40,7 +40,7 @@ export default function Product() {
   const [currentProductId, setCurrentProductId] = useState(null);
 
   // hàm trên được sử dụng khi thay đổi Trang
-  const handleChangePage = (newPage) => {
+  const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
   // hàm này được sử dụng khi thay đổi cột trong từng trang
@@ -125,8 +125,7 @@ export default function Product() {
         align: "center",
         // IconButton được lắng nghe sự kiện onClick và nhận vào một id khi Click vào
         // Với form IconButton được nhận sẽ hiển thị EditPRoductDiaglog hoặc là deleteProduct theo id
-
-        format: (product) => (
+        format: (value, product) => (
           <>
             <IconButton onClick={() => showEditProductDialog(product.id)}>
               <SettingsIcon />
@@ -143,12 +142,13 @@ export default function Product() {
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <Button
-        style={{ background: "#37306B", color: "#F6BA6F", margin: 20 }}
+        variant="outlined"
+        style={{ background: "white", color: "blue", margin: 20 }}
         onClick={() => {
           setOpen(true);
         }}
       >
-        <p>Create product</p>
+        Create product
       </Button>
       {/* gọi component CreateProduct và truyền prop vào để xử dụng component con của nó tại đây */}
       <CreateProduct

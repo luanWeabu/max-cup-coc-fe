@@ -9,7 +9,7 @@ import Login from "./admin/Login";
 import Admin from "./admin/admin";
 import AuthScreen from "./admin/AuthScreen";
 import Product from "./admin/product/Product";
-import Users from "./admin/Users";
+import Users from "./admin/users/Users";
 
 const router = createBrowserRouter([
   {
