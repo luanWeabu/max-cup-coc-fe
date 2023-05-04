@@ -16,7 +16,9 @@ function ProductForm(props) {
     name: "",
     type: "",
     origin: "",
+    price: "",
     time: "",
+    url_img: "",
   });
 
   const [open, setOpen] = useState(props.open);
@@ -54,14 +56,18 @@ function ProductForm(props) {
         name: "",
         type: "",
         origin: "",
+        price: "",
         time: "",
+        url_img: "",
       });
       setOriginalFormData({
         id: "",
         name: "",
         type: "",
         origin: "",
+        price: "",
         time: "",
+        url_img: "",
       });
     }
     setIsProductUpdated(false);
@@ -102,7 +108,9 @@ function ProductForm(props) {
       name: "",
       type: "",
       origin: "",
+      price: "",
       time: "",
+      url_img: "",
     });
     //dùng để đóng cửa sổ
     props.handleClose();
@@ -117,6 +125,7 @@ function ProductForm(props) {
       name: productFormData.name,
       type: productFormData.type,
       origin: productFormData.origin,
+      price: productFormData.price,
       time: productFormData.time,
     };
     //
@@ -149,6 +158,18 @@ function ProductForm(props) {
   const hasFormChange = Object.keys(productFormData).some(
     (key) => productFormData[key] !== originalFormData[key]
   );
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setProductFormData({
+        ...productFormData,
+        image: reader.result,
+      });
+    };
+  };
 
   return (
     <div>
@@ -196,14 +217,40 @@ function ProductForm(props) {
           <TextField
             autoFocus
             margin="dense"
+            label="price"
+            type="number"
+            fullWidth
+            name="price"
+            value={productFormData.price}
+            onChange={(e) =>
+              setProductFormData({ ...productFormData, price: e.target.value })
+            }
+          />
+          <TextField
+            autoFocus
+            margin="dense"
             label="time"
             type="date"
             fullWidth
             name="time"
             value={productFormData.time}
             onChange={(e) => {
-              console.log(e.target.value);
               setProductFormData({ ...productFormData, time: e.target.value });
+            }}
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            label="url_img"
+            type="text"
+            fullWidth
+            name="url_img"
+            value={productFormData.url_img}
+            onChange={(e) => {
+              setProductFormData({
+                ...productFormData,
+                url_img: e.target.value,
+              });
             }}
           />
         </DialogContent>

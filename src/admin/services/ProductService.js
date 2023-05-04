@@ -6,41 +6,58 @@ class ProductService {
       type: "thủy tinh",
       origin: "Vietnam",
       time: "23 - 09 - 2023",
+      price: 7600,
+      url_img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6CAJ0HDwTfpd5x7wrlZaLgJ8KwKjhwTr3-QtK8g5Rb5n3kHPfrrm8y3S8e-uMwXqpC4&usqp=CAU",
     },
     {
       id: 2,
       name: "Cốc gốm Thái sơn ",
       type: "cốc gốm",
       origin: "Trung quốc",
+      price: 3200,
       time: "23 - 09 - 2023",
+      url_img:
+        "https://jysk.vn/Data/Sites/1/Product/9861/4911709-coc-halfdan-gom-jysk-1.jpg",
     },
     {
       id: 3,
-      name: "Cốc Xứ Agentina",
+      name: "Cốc Xứ Agentina Messi",
       type: "cốc xứ",
       origin: "Argentina",
+      price: 2300,
       time: "23 - 09 - 2023", //2023-
+      url_img:
+        "https://hmedhmade.com/wp-content/uploads/2023/01/Coc-Messi-Argentina-Vo-Dich-World-Cup-2022-scaled.jpg",
     },
     {
       id: 4,
       name: "Cốc Vàng Cổ 3 triệu năm",
       type: "Cốc ",
       origin: "Vietnam",
+      price: 540020,
       time: "23 - 09 - 2023",
+      url_img:
+        "https://luxurygifts.vn/wp-content/uploads/2022/06/0048556-2.jpg",
     },
     {
       id: 5,
       name: "Cốc giấy Sinh nhật",
       type: "Cốc giấy",
       origin: "Vietnam",
+      price: 5,
       time: "23 - 09 - 2023",
+      url_img: "https://hopthucpham.vn/files/coc-giay-banh-sinh-nhat-2jpg.jpg",
     },
     {
       id: 6,
       name: "Cốc in hoa tiết cực đẹp",
       type: "Cốc",
       origin: "Châu âu",
+      price: 200,
       time: "23 - 09 - 2023",
+      url_img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1i-haCE8fejtXsOVSDgm76BqJvW8FCtprUA&usqp=CAU",
     },
   ];
   //lấy ra dánh sách của dataProduct

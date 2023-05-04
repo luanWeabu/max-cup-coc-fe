@@ -112,11 +112,25 @@ export default function Product() {
         format: (value) => value.toLocaleString("en-US"),
       },
       {
+        id: "price",
+        label: "Price",
+        minWidth: 170,
+        align: "center",
+        format: (value) => value.toLocaleString("en-US"),
+      },
+      {
         id: "time",
         label: "Time",
         minWidth: 170,
         align: "center",
         format: (value) => value.toLocaleString("en-US"),
+      },
+      {
+        id: "url_img",
+        label: "Image",
+        minWidth: 170,
+        align: "center",
+        format: (value) => <img src={value} style={{ width: "30px" }} />,
       },
       {
         id: "action",
